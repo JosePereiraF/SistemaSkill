@@ -66,4 +66,13 @@ public class ControllerExceptionHandler extends ResponseEntityExceptionHandler{
 				LocalDateTime.now(), erros);
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(er);
 	}
+	@ExceptionHandler(LoginIncorretoException.class)
+	public ResponseEntity<Object> hadleLoginIncorretoException(LoginIncorretoException ex){
+		List<String> erros = new ArrayList<>();
+		erros.add(ex.getMessage());
+		
+		ErroResposta er = new ErroResposta(HttpStatus.BAD_REQUEST.value(), ex.getMessage(),
+				LocalDateTime.now(), erros);
+		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(er);
+	}
 }
