@@ -6,6 +6,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import io.swagger.v3.oas.models.Components;
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.Info;
+
 @Configuration
 public class AppConfig {
 	@Bean
@@ -18,6 +22,13 @@ public class AppConfig {
             }
         };
     }	
+	@Bean
+    public OpenAPI customOpenApi(){
+        return new OpenAPI()
+                .components(new Components())
+                .info(new Info().title("PROJETO SISTEMA DE SKILLS")
+                        .description("Documentação da API da aplicação Skill Badge."));
+    }
 
 	@Bean
     BCryptPasswordEncoder bCryptPasswordEncoder() {
