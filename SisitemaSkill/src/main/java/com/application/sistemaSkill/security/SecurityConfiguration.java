@@ -27,6 +27,9 @@ public class SecurityConfiguration {
 				.authorizeHttpRequests(authorize -> authorize
 					.requestMatchers(HttpMethod.POST,"/auth/login").permitAll()
 					.requestMatchers(HttpMethod.POST,"/usuario").permitAll()
+					.requestMatchers(HttpMethod.POST,"/usuario/teste").permitAll()
+					.requestMatchers(HttpMethod.GET,"/skill/foto/{id}").permitAll()
+					
 					.anyRequest().authenticated()
 						)
 				.addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)

@@ -39,8 +39,9 @@ public class UsuarioSkillController {
 	public ResponseEntity<UsuarioSkillResponseDTO> atualizarSkill(@RequestBody AtualizarSkillRequestDTO a){
 		return new ResponseEntity<>(service.atualizarSkill(a),HttpStatus.OK);
 	}
-	@DeleteMapping//isso pode gerar erro porque o delete mapping não tem body talvez eu va ter que passar isso no path
-	public ResponseEntity<String> excluirUsuarioSkill(@Valid @RequestBody ExcluirUsuarioSkillDTO e){
+	@PutMapping("/deletar")//isso pode gerar erro porque o delete mapping não tem body talvez eu va ter que passar isso no path
+	public ResponseEntity<String> excluirUsuarioSkill(@RequestBody ExcluirUsuarioSkillDTO e){
+		System.out.println(e.toString());
 		return new ResponseEntity<>(service.excluirUsuarioSkill(e),HttpStatus.NO_CONTENT);
 	}
 }

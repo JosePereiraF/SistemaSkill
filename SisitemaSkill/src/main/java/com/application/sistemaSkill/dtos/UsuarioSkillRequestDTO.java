@@ -4,14 +4,14 @@ import java.util.List;
 
 public class UsuarioSkillRequestDTO {
 
-	private Long idUsario;
+	private Long idUsuario;
 	private List<SkillNivelRequestDTO>skill;
 	
-	public Long getIdUsario() {
-		return idUsario;
+	public Long getIdUsuario() {
+		return idUsuario;
 	}
-	public void setIdUsario(Long idUsario) {
-		this.idUsario = idUsario;
+	public void setIdUsuario(Long idUsuario) {
+		this.idUsuario = idUsuario;
 	}
 	public List<SkillNivelRequestDTO> getSkill() {
 		return skill;

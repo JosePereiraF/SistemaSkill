@@ -43,7 +43,7 @@ public class UsuarioSkillService {
 	}
 	@Transactional
 	public List<UsuarioSkillResponseDTO> salvarSKills(UsuarioSkillRequestDTO usuarioSkill) {
-			Optional<Usuario>usuario= usuarioRepository.findById(usuarioSkill.getIdUsario());
+			Optional<Usuario>usuario= usuarioRepository.findById(usuarioSkill.getIdUsuario());
 			if(usuario.isPresent()) {
 				Set<UsuarioSkill> skills = new HashSet<>();
 				usuarioSkill.getSkill().forEach(i->{

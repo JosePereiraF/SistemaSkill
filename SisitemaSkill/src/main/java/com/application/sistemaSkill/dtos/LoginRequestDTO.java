@@ -16,5 +16,9 @@ public class LoginRequestDTO {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+	@Override
+	public String toString() {
+		return "LoginRequestDTO [login=" + login + ", senha=" + senha + "]";
+	}
 	
 }

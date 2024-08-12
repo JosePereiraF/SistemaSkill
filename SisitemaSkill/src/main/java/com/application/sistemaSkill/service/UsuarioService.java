@@ -51,6 +51,13 @@ public class UsuarioService {
 		u.setUrl(uri.toString());
 		return new UsuarioResponseDTO(repository.save(u));
 	}
-	
+	public UsuarioResponseDTO salvarUsuarioTeste(UsuarioRequestDTO usuario) {
+		if(repository.findByLogin(usuario.getLogin()).isPresent()) throw new ResourceExistsException("Login ja Existente!");
+		Usuario u = new Usuario(usuario);
+		u.setSenha(encoder.encode(usuario.getSenha()));
+		u.setUrl("/usuario/foto/1");
+		return new UsuarioResponseDTO(repository.save(u));
+		
+	}
 	
 }

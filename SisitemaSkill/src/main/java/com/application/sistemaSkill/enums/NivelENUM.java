@@ -1,9 +1,9 @@
 package com.application.sistemaSkill.enums;
 
 public enum NivelENUM {
-	BASICO("basico"),
-	INTERMEDIARIO("intermediario"),
-	AVANCADO("avancado");
+	BASICO("Basico"),
+	INTERMEDIARIO("Intermediario"),
+	AVANCADO("Avançado");
 	private String nivel;
 	NivelENUM(String nivel){
 		this.nivel = nivel;

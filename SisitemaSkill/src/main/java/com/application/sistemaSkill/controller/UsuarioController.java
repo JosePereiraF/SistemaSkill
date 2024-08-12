@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
@@ -52,6 +53,10 @@ public class UsuarioController {
 	@PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
 	public ResponseEntity<UsuarioResponseDTO>salvarUsuario(@Valid @RequestPart UsuarioRequestDTO usuario, @RequestPart MultipartFile file) {
 		return new ResponseEntity<>(service.salvarUsuario(usuario, file),HttpStatus.CREATED);
+	}
+	@PostMapping("/teste")
+	public ResponseEntity<UsuarioResponseDTO> salvarUsuario(@Valid @RequestBody UsuarioRequestDTO usuario){
+		return new ResponseEntity<>(service.salvarUsuarioTeste(usuario),HttpStatus.CREATED);
 	}
 	
 }

@@ -27,6 +27,7 @@ public class AuthenticationController {
 	    private TokenService tokenService;
 	    @PostMapping("/login")
 	    public ResponseEntity<UserLoginResponseDTO> login(@Valid @RequestBody LoginRequestDTO login) {
+	    	System.out.println(login.toString());
 	        try {
 	            var usernamePassword = new UsernamePasswordAuthenticationToken(login.getLogin(), login.getSenha());
 	            var auth = this.authenticationManager.authenticate(usernamePassword);

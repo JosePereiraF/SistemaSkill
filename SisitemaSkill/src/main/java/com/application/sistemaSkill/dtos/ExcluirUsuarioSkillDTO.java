@@ -15,6 +15,10 @@ public class ExcluirUsuarioSkillDTO {
 	public void setIdSkill(Long idSkill) {
 		this.idSkill = idSkill;
 	}
+	@Override
+	public String toString() {
+		return "ExcluirUsuarioSkillDTO [idUsuario=" + idUsuario + ", idSkill=" + idSkill + "]";
+	}
 	
 	
 }
