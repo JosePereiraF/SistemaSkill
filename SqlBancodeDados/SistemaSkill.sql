@@ -1,0 +1,28 @@
+CREATE TABLE usuario(
+	id SERIAL PRIMARY KEY,
+	nome VARCHAR(100) NOT NULL,
+	login VARCHAR(50) NOT NULL UNIQUE,
+	senha VARCHAR (50) NOT NULL,
+	criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	atualizado_em TIMESTAMP
+);
+CREATE TABLE skill(
+	id SERIAL PRIMARY KEY,
+	nome VARCHAR(50) NOT NULL UNIQUE,
+	descricao VARCHAR(255) NOT NULL,
+	criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	atualizado_em TIMESTAMP
+);
+CREATE TABLE foto_skill(
+	id_skill INTEGER REFERENCES skill(id),
+	PRIMARY KEY(id_skill),
+	foto BYTEA NOT NULL
+);
+CREATE TABLE usuario_skill(
+	nivel VARCHAR(50) NOT NULL,
+	id_usuario INTEGER REFERENCES usuario(id) NOT NULL,
+	id_skill INTEGER REFERENCES skill(id) NOT NULL,
+	PRIMARY KEY(id_usuario, id_skill),
+	criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
