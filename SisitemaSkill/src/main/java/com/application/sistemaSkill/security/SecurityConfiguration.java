@@ -29,7 +29,9 @@ public class SecurityConfiguration {
 					.requestMatchers(HttpMethod.POST,"/usuario").permitAll()
 					.requestMatchers(HttpMethod.POST,"/usuario/teste").permitAll()
 					.requestMatchers(HttpMethod.GET,"/skill/foto/{id}").permitAll()
-					
+            		.requestMatchers("/v3/api-docs/**").permitAll()
+            		.requestMatchers("/swagger-ui.html").permitAll()
+            		.requestMatchers("/swagger-ui/**").permitAll()	
 					.anyRequest().authenticated()
 						)
 				.addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)

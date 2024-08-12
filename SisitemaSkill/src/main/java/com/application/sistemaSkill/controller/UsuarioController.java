@@ -34,7 +34,7 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/usuario")
-@Tag(name = "Skill" ,description = "Controlador da classe Usuario")
+@Tag(name = "Usuario" ,description = "Controlador da classe Usuario")
 public class UsuarioController {
 
 	@Autowired
