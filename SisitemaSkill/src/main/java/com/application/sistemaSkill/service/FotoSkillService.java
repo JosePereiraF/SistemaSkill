@@ -8,10 +8,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.application.sistemaSkill.entity.FotoSkill;
-import com.application.sistemaSkill.entity.FotoUsuario;
 import com.application.sistemaSkill.entity.Skill;
 import com.application.sistemaSkill.exceptions.FotoException;
-import com.application.sistemaSkill.exceptions.ResourceExistsException;
 import com.application.sistemaSkill.exceptions.ResourceNotFoundException;
 import com.application.sistemaSkill.repository.FotoSkillRepository;
 @Service

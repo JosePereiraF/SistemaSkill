@@ -1,6 +1,5 @@
 package com.application.sistemaSkill.dtos;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -21,7 +20,6 @@ public class UsuarioResponseDTO {
 		this.nome= u.getNome();
 		this.login= u.getLogin();
 		this.senha= u.getSenha();
-		this.url = u.getUrl();
 		this.skills =listarSkills(u.getSkills());
 	}
 	public List<SkillResponseDTO> listarSkills(Set<UsuarioSkill> lista){

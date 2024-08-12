@@ -29,7 +29,6 @@ public class Usuario implements UserDetails{
 	private String nome;
 	private String login;
 	private String senha;
-	private String url;
 	private CargoENUM role;
 	private LocalDateTime criadoEm;
 	private LocalDateTime atualizadoEm;
@@ -104,12 +103,6 @@ public class Usuario implements UserDetails{
 	}
 	public void setSenha(String senha) {
 		this.senha = senha;
-	}
-	public String getUrl() {
-		return url;
-	}
-	public void setUrl(String url) {
-		this.url = url;
 	}
 	public LocalDateTime getCriadoEm() {
 		return criadoEm;

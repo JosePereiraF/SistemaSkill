@@ -4,20 +4,21 @@ import com.application.sistemaSkill.entity.UsuarioSkill;
 
 public class UsuarioSkillResponseDTO {
 	private Long idUsuario;
-	private Long idSkill;
-	private String url;
+	private Long id;
+	private String foto;
 	private String nome;
 	private String descricao;
-	private String level;
+	private String nivel;
+
 	public UsuarioSkillResponseDTO() {
 	}
 	public UsuarioSkillResponseDTO(UsuarioSkill i) {
 		this.idUsuario = i.getId().getUsuario().getId();
-		this.idSkill = i.getId().getSkill().getId();
+		this.id = i.getId().getSkill().getId();
 		this.nome = i.getId().getSkill().getNome();
 		this.descricao =i.getId().getSkill().getDescricao();
-		this.url = i.getId().getSkill().getUrl();
-		this.level = i.getNivel().getNivel();
+		this.foto = i.getId().getSkill().getUrl();
+		this.nivel = i.getNivel().getNivel();
 	}
 	
 	public Long getIdUsuario() {
@@ -26,11 +27,12 @@ public class UsuarioSkillResponseDTO {
 	public void setIdUsuario(Long idUsuario) {
 		this.idUsuario = idUsuario;
 	}
-	public Long getIdSkill() {
-		return idSkill;
+
+	public Long getId() {
+		return id;
 	}
-	public void setIdSkill(Long idSkill) {
-		this.idSkill = idSkill;
+	public void setId(Long id) {
+		this.id = id;
 	}
 	public String getNome() {
 		return nome;
@@ -44,18 +46,19 @@ public class UsuarioSkillResponseDTO {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	public String getLevel() {
-		return level;
+
+	public String getNivel() {
+		return nivel;
 	}
-	public void setLevel(String level) {
-		this.level = level;
+	public void setNivel(String nivel) {
+		this.nivel = nivel;
 	}
-	public String getUrl() {
-		return url;
+	public String getFoto() {
+		return foto;
 	}
-	public void setUrl(String url) {
-		this.url = url;
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
-	
+
 	
 }
